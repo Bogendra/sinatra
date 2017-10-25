@@ -1,0 +1,14 @@
+<% if @appointments%>
+  <form action="/<%= @appointments.id %>" method="post" id="edit">
+    <input type="hidden" name="_method" value="put">
+    <textarea name="content"><%= @appointments.content %></textarea>
+    <input type="checkbox" name="complete" <%= "checked" if @appointments.complete %>>
+    <input type="submit">
+  </form>
+  <p><a href="/<%= @appointments.id %>/delete">Delete</a></p>
+<% else %>
+  <p>Appointments not found.</p>
+<% end %>
+
+
+
